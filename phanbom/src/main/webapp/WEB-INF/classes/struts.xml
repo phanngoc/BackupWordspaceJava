@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 	<constant name="struts.devMode" value="true" />
+ 	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+	<constant name="struts.enable.SlashesInActionNames" value="true"/>
+	<constant name="struts.patternMatcher" value="namedVariable"/>
+ 	
+	<package name="default" namespace="/User" extends="struts-default">
+		<action name="Login" class="com.common.WelcomUserAction" method="execute">
+			<result name="success">HelloWorld.jsp</result>
+			<result name="deny">ActionDenied.jsp</result>
+		</action>
+		<action name="Upload" class="com.common.UploadFile" method="execute">
+			<result name="success">UploadSuccess.jsp</result>
+			<result name="error">UploadError.jsp</result>
+		</action>
+		
+	</package>
+ 	<package name="mail" namespace="/email" extends="struts-default">
+		<action name="Emailer" class="com.common.Emailer" method="execute">
+			<result name="success">send_mail_success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>		
+	</package>
+	
+	<package name="vali" namespace="/Vali" extends="struts-default">
+		<action name="empinfo" class="com.common.Employ1" method="execute">
+			<result name="success">success.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>		
+	</package>
+	
+	<package name="helloworld" namespace="/Vali" extends="struts-default">
+      <action name="user/{firstName}" class="userClass" method="execute">
+         <result name="success">/login.jsp</result>
+      </action>
+   </package>
+	
+	
+</struts>

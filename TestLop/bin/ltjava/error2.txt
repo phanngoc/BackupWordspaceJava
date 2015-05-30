@@ -1,0 +1,3 @@
+Dong 1:Thu nhap khong phai la so
+Dong 4:Ma nhan vien khong ton tai
+Dong 5:Thu nhap khong phai la so

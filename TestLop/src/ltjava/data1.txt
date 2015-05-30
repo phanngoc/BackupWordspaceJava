@@ -1,0 +1,4 @@
+NV000001,Nguyen Van A,3/4/1990,nva@fsoft.com.vn
+NV000002,Nguyen Van Phi Lip,01/11/1980,philip.nguyenvan@gmail.com
+NV000003,Nguyen Van Nhan,01/12/1980,vuive@gmail.com
+NV000004,Nguyen Hung,02/4/1980,huynhung@gmail.com
