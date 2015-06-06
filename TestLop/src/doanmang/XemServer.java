@@ -58,8 +58,7 @@ class ThreadXuly extends Thread{
 		          System.out.print("chuoi query 1:"+chuoiquery[0]);
 		          if(chuoiquery[1].equals("maso"))
 				  {
-					rs = stmt.executeQuery( "SELECT * FROM sinhvien WHERE MSSV LIKE '%"+chuoiquery[0]+"%' AND khoithi='"+chuoiquery[2]+"' AND truong="+chuoiquery[3]+";" );
-					
+					rs = stmt.executeQuery( "SELECT * FROM sinhvien WHERE MSSV LIKE '%"+chuoiquery[0]+"%' AND khoithi='"+chuoiquery[2]+"' AND truong="+chuoiquery[3]+";" );	
 				  }
 		          else if(chuoiquery[1].equals("name"))
 		          {
@@ -70,8 +69,8 @@ class ThreadXuly extends Thread{
 		     
 		          while ( rs.next() ) {
 		        	 System.out.println("Lap ket qua server");
-		             int id = rs.getInt("MSSV");
-		             
+		             String id = rs.getString("MSSV");
+		             System.out.println(id+"me");
 		             String fullname = rs.getString("fullname");
 		             int khoithi  = rs.getInt("khoithi");
 		             String birthday = rs.getString("birthday");
@@ -79,7 +78,7 @@ class ThreadXuly extends Thread{
 		             String quequan = rs.getString("quequan");
 		             ketqua_final = ""+id+"|"+fullname+"|"+khoithi+"|"+birthday+"|"+gender+"|"+quequan+"|";
 		             Statement stmt1 = c.createStatement();
-		             ResultSet rs_diemso = stmt1.executeQuery( "SELECT * FROM diemso WHERE id_hocsinh = "+id );
+		             ResultSet rs_diemso = stmt1.executeQuery( "SELECT * FROM diemso WHERE id_hocsinh = '"+id+"'" );
 		             while(rs_diemso.next())
 		             {
 		            	ketqua_final += rs_diemso.getFloat("diem")+"|"; 
